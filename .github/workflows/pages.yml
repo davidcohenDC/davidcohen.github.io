@@ -1,4 +1,4 @@
-name: Deploy Shafin's Portfolio
+name: Deploy David's Portfolio
 
 on:
   push:

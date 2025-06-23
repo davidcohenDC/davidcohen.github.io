@@ -1,10 +1,14 @@
-import { BASE_URL } from '@/lib/constants';
 
+/**
+ * Copyright © 2025 David Cohen
+ * SPDX-License-Identifier: MIT
+ */
+import { BASE_URL } from '@/lib/constants';
 export default function manifest() {
   return {
-    name: 'Shahriar Shafin',
-    short_name: 'Shafin',
-    description: 'Shahriar Shafin protfolio website',
+    name: 'David Cohen',
+    short_name: 'Dev',
+    description: 'Portfolio website for David Cohen — software engineer & architect',
     theme_color: '#1A85FF',
     background_color: '#171923',
     manifest_version: 2,
@@ -13,7 +17,7 @@ export default function manifest() {
     scope: '/',
     start_url: '/',
     id: '/',
-    categories: ['Portfolio', 'Shafin'],
+    categories: ['Portfolio', 'Software-Engineering'],
     version: '3.1.0',
     orientation: 'portrait',
     lang: 'en-US',
@@ -22,9 +26,9 @@ export default function manifest() {
     prefer_related_applications: true,
     protocol_handlers: [
       {
-        protocol: 'web+Shafin',
-        name: 'Open with Shafin',
-        description: 'Handles links with the shafin protocol',
+        protocol: 'web+david',
+        name: 'Open with David Cohen Portfolio',
+        description: 'Handles links with the david protocol',
         url: '/?url=%s'
       }
     ],

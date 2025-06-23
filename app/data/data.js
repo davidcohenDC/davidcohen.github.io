@@ -1,89 +1,95 @@
 import { FaDribbble, FaGithub, FaLinkedin, FaRegEnvelope } from 'react-icons/fa';
 
+/* ----------  Open-source repos that appear on the home page ---------- */
 export const featuredRepositories = [
-  'myportfolio',
-  'shahriarshafin',
-  'nodemcu-esp8266-fake-sign-in',
-  'face-hand-tracker'
+  'convert_jsonl_to_csv',   // handy data-wrangling CLI
+  's-parking',
+  'factory_manager_server',
+  'workout-plan'
 ];
 
+/* ----------  Career timeline ---------- */
 export const companies = [
   {
     id: 1,
-    institution: 'Wander Woman',
-    logo: '/images/companies/wander-woman.png',
-    degree: 'Software Engineer',
-    startDate: 'Sep 2024',
-    endDate: 'Present'
-  },
+    institution: 'Docenti.it',
+    logo: '/images/companies/docenti-it.png',
+    degree: 'Full-Stack Developer',
+    startDate: 'Jun 2021',
+    endDate  : 'Jun 2023'
+  },                               // full-time role :contentReference[oaicite:5]{index=5}
   {
     id: 2,
-    institution: 'Taskeasy Technologies',
-    logo: '/images/companies/taskeasy.png',
-    degree: 'Junior Software Engineer',
-    startDate: 'Apr 2023',
-    endDate: 'Sep 2024'
-  },
+    institution: 'GC Group Srl',
+    logo: '/images/companies/gc-group.png',
+    degree: 'System & Network Administrator',
+    startDate: 'Sep 2016',
+    endDate  : 'Jun 2018'
+  },                               // sys-admin experience :contentReference[oaicite:6]{index=6}
   {
     id: 3,
-    institution: 'Pridesys IT Limited',
-    logo: '/images/companies/pridesys.png',
-    degree: 'Software Engineer - Intern',
-    startDate: 'Aug 2022',
-    endDate: 'Nov 2022'
-  }
+    institution: 'I-Tel Srl',
+    logo: '/images/companies/itel.png',
+    degree: 'IT Intern',
+    startDate: 'Feb 2015',
+    endDate  : 'Mar 2015'
+  }                                // internship :contentReference[oaicite:7]{index=7}
 ];
 
+/* ----------  Education ---------- */
 export const institutions = [
   {
     id: 1,
-    institution: 'University of Asia Pacific',
-    logo: '/images/institutions/uap.png',
-    degree: 'Bachelor of Science, Computer Science & Engineering (CSE)',
-    startDate: '2018',
-    endDate: '2022'
-  }
-  // {
-  // 	id: 2,
-  // 	institution: 'Cantonment Public School & College, BUSMS',
-  // 	logo: '/images/institutions/busms.png',
-  // 	degree: 'Higher Secondary Certificate, Science',
-  // 	startDate: '2016',
-  // 	endDate: '2018',
-  // },
-  // {
-  // 	id: 3,
-  // 	institution: 'Cantonment Public School & College, Saidpur',
-  // 	logo: '/images/institutions/cpscs.png',
-  // 	degree: 'Secondary School Certificate, Science',
-  // 	startDate: '2014',
-  // 	endDate: '2016',
-  // },
-];
-
-export const socialMedia = [
-  {
-    id: 1,
-    label: 'Github',
-    icon: <FaGithub />,
-    url: 'https://github.com/shahriarshafin'
-  },
+    institution: 'University of Bologna',
+    logo: '/images/institutions/unibo.png',
+    degree: 'M.S. Computer Science & Engineering',
+    startDate: '2022',
+    endDate  : 'Present'
+  },                                // current studies :contentReference[oaicite:8]{index=8}
   {
     id: 2,
-    label: 'Linkedin',
-    icon: <FaLinkedin />,
-    url: 'https://www.linkedin.com/in/shahriarshafin/'
+    institution: 'University of Bologna',
+    logo: '/images/institutions/unibo.png',
+    degree: 'B.S. Computer Science & Engineering',
+    startDate: '2019',
+    endDate  : '2022'
   },
   {
     id: 3,
-    label: 'Dribbble',
-    icon: <FaDribbble />,
-    url: 'https://dribbble.com/shahriarshafin'
-  },
-  {
-    id: 4,
-    label: 'Mail to Shafin',
-    icon: <FaRegEnvelope />,
-    url: 'mailto:connect.shafin@gmail.com'
+    institution: 'I.T.I. P. Gobetti',
+    logo: '/images/institutions/gobetti.png',
+    degree: 'Technical High-School Diploma (IT)',
+    startDate: '2009',
+    endDate  : '2014'
   }
 ];
+
+/* ----------  2025 Goals ---------- */
+export const highlightList = [
+  { id: 1, text: 'Graduate my M.S. and publish summarisation research' },
+  { id: 2, text: 'Contribute more to open-source JVM & NLP tooling' },
+  { id: 3, text: 'Speak at a tech conference on production NLP' }
+];
+
+/* ----------  Social links ---------- */
+export const socialMedia = [
+  {
+    id: 1,
+    label: 'GitHub',
+    icon : <FaGithub />,
+    url  : 'https://github.com/davidcohenDC'
+  },
+  {
+    id: 2,
+    label: 'LinkedIn',
+    icon : <FaLinkedin />,
+    url  : 'https://www.linkedin.com/in/david-cohen96/'
+  },
+  {
+    id: 3,
+    label: 'Mail me',
+    icon : <FaRegEnvelope />,
+    url  : 'mailto:davidcohen96@outlook.com'
+  }
+];
+

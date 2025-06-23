@@ -6,43 +6,43 @@ import { companies, institutions } from '@/app/data/data';
 import { skills } from '@/app/data/skills';
 
 export const metadata = {
-  title: 'About',
-  description:
-    "Discover Shahriar Shafin's journey in web development, from his foundational education in Computer Science to his professional experience as a software engineer. Skilled in technologies like JavaScript, React, Next.js, and more."
+    title: 'About',
+    description:
+        'Learn about David Cohen’s journey as a software engineer & architect, from early fascination with code to building scalable systems in Python, Java, and functional-programming paradigms.'
 };
 
 export default function About() {
-  return (
-    <>
-      <section>
-        <Heading text={'Tech Stack'} />
+    return (
+        <>
+            {/*<section>*/}
+            {/*    <Heading text={'Tech Stack'} />*/}
 
-        <div className="mt-3 flex w-full flex-wrap gap-4 lg:px-5">
-          {skills.map((item) => (
-            <SkillCap key={item.id} {...item} />
-          ))}
-        </div>
-      </section>
+            {/*    <div className="mt-3 flex w-full flex-wrap gap-4 lg:px-5">*/}
+            {/*        {skills.map((item) => (*/}
+            {/*            <SkillCap key={item.id} {...item} />*/}
+            {/*        ))}*/}
+            {/*    </div>*/}
+            {/*</section>*/}
 
-      <section>
-        <Heading text={'Career'} />
+            <section>
+                <Heading text={'Career'} />
 
-        <div className="mt-3 space-y-4 lg:px-5">
-          {companies.map((edu) => (
-            <EduCard key={edu.id} {...edu} />
-          ))}
-        </div>
-      </section>
+                <div className="mt-3 space-y-4 lg:px-5">
+                    {companies.map((edu) => (
+                        <EduCard key={edu.id} {...edu} />
+                    ))}
+                </div>
+            </section>
 
-      <section>
-        <Heading text={'Education'} />
+            <section>
+                <Heading text={'Education'} />
 
-        <div className="mt-3 space-y-4 lg:px-5">
-          {institutions.map((edu) => (
-            <EduCard key={edu.id} {...edu} />
-          ))}
-        </div>
-      </section>
-    </>
-  );
+                <div className="mt-3 space-y-4 lg:px-5">
+                    {institutions.map((edu) => (
+                        <EduCard key={edu.id} {...edu} />
+                    ))}
+                </div>
+            </section>
+        </>
+    );
 }

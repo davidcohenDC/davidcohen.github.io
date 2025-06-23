@@ -1,77 +1,83 @@
+
 import { Cabin } from 'next/font/google';
 
 import { GoogleAnalytics, GoogleTagManager } from '@next/third-parties/google';
-import { ViewTransitions } from 'next-view-transitions';
 
 import { BASE_URL } from '@/lib/constants';
 
 import Footer from '@/components/footer';
 import Navbar from '@/components/navbar';
-
+import PageTransition from '@/components/page-transition';
 import './globals.css';
 
+
+/* ────────────────────────────────────── */
+/*  Fonts & viewport                      */
+/* ────────────────────────────────────── */
 const cabin = Cabin({
   subsets: ['latin'],
   display: 'swap'
 });
+
 export const viewport = {
   colorScheme: 'only dark',
   themeColor: '#1A1F2A'
 };
+
+/* ────────────────────────────────────── */
+/*  Metadata                              */
+/* ────────────────────────────────────── */
 export async function generateMetadata() {
   return {
     referrer: 'origin',
     pageType: 'Portfolio',
     other: {
       'page-type': 'Portfolio',
-      copyright: 'Shahriar Shafin',
+      copyright: 'David Cohen',
       audience: 'Everyone',
-      'itemProp:name': 'Shahriar Shafin | Frontend Developer',
+      'itemProp:name': 'David Cohen | Software Engineer & Architect',
       'itemProp:description':
-        'Shahriar Shafin is a web designer & front-end web developer based in Dhaka, Bangladesh',
+          'David Cohen is a software engineer and architect who enjoys building elegant solutions in Python, Java, and with functional-programming techniques.',
       'itemProp:image': `${BASE_URL}/opengraph-image.png`
     },
     metadataBase: new URL(BASE_URL),
 
+    /* ——— <title> ——— */
     title: {
-      default: 'Shahriar Shafin | Frontend Developer',
-      template: '%s | Shahriar Shafin'
+      default: 'David Cohen | Software Engineer & Architect',
+      template: '%s | David Cohen'
     },
+
+    /* ——— Verification ——— */
     verification: {
       google: 'process.env.NEXT_PUBLIC_GOOGLE_VERIFICATION'
     },
 
+    /* ——— <meta name="description"> ——— */
     description:
-      'Frontend developer specializing in React.js & Next.js. Building excellent software that improves lives through open source contributions and innovative web solutions',
+        'Software engineer & researcher specialising in machine-learning, natural-language processing and robust back-end architecture.',
+    applicationName: 'David Cohen',
 
-    applicationName: 'Shahriar Shafin',
-
+    /* ——— Keywords ——— */
     keywords: [
-      'shafin',
-      'shafin uap',
-      'shahriar shafin',
-      'shafin website',
-      'shafin bd',
-      'shafin portfolio',
-      'frontend developer',
-      'web developer',
-      'React.js',
-      'Next.js',
-      'TailwindCSS',
-      'Bangladesh',
-      'open source contributor'
+      'david cohen','software engineer','nlp','machine learning',
+      'java','scala','kotlin','python',
+      'react','next.js','portfolio'
     ],
-    authors: [{ name: 'Shahriar Shafin', url: BASE_URL }],
-    creator: 'Shahriar Shafin',
-    publisher: 'Shahriar Shafin',
 
+    /* ——— Authorship ——— */
+    authors: [{ name: 'David Cohen', url: BASE_URL }],
+    creator: 'David Cohen',
+    publisher: 'David Cohen',
+
+    /* ——— Open Graph ——— */
     openGraph: {
-      title: 'Shahriar Shafin',
+      title: 'David Cohen',
       description:
-        'Frontend developer specializing in React.js & Next.js. Building excellent software that improves lives through open source contributions and innovative web solutions',
-      authors: ['Shahriar Shafin'],
+          'Software engineer & architect specialising in Python, Java, and functional programming. Delivering scalable, high-quality software solutions.',
+      authors: ['David Cohen'],
       url: BASE_URL,
-      siteName: 'Shahriar Shafin',
+      siteName: 'David Cohen',
       locale: 'en_US',
       type: 'website',
       images: [
@@ -79,25 +85,31 @@ export async function generateMetadata() {
           url: `${BASE_URL}/opengraph-image.png`,
           width: 1200,
           height: 630,
-          alt: 'Shahriar Shafin | Frontend Developer',
+          alt: 'David Cohen | Software Engineer & Architect',
           type: 'image/png'
         }
       ]
     },
+
+    /* ——— Twitter Cards ——— */
     twitter: {
       card: 'summary_large_image',
-      title: 'Shahriar Shafin',
+      title: 'David Cohen',
       description:
-        'Frontend developer specializing in React.js & Next.js. Building excellent software that improves lives through open source contributions and innovative web solutions',
+          'Software engineer & architect focusing on Python, Java, functional programming, and modern web tech.',
       images: [`${BASE_URL}/opengraph-image.png`],
-      creator: '@connectshafin',
-      site: '@connectshafin',
+      creator: '@davidcohen',
+      site: '@davidcohen',
       url: BASE_URL
     },
+
+    /* ——— Icons & PWA ——— */
     icons: {
       icon: '/favicon.ico'
     },
     manifest: `${BASE_URL}/manifest.json`,
+
+    /* ——— Crawling ——— */
     robots: {
       index: true,
       follow: true,
@@ -108,28 +120,37 @@ export async function generateMetadata() {
         noimageindex: false
       }
     },
+
+    /* ——— Languages ——— */
     languages: {
       'en-US': '/en-US'
     }
   };
 }
 
+/* ────────────────────────────────────── */
+/*  Root layout                           */
+/* ────────────────────────────────────── */
 export default function RootLayout({ children }) {
   return (
-    <ViewTransitions>
       <html lang="en" className={`${cabin.className} h-full scroll-smooth`}>
-        <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GA_TRACKING_ID} />
-        <body className="antialiased">
-          <Navbar />
-          <main className="relative isolate overflow-hidden">
-            <div className="mx-auto min-h-svh w-full max-w-[50rem] px-5 py-3 pt-16 md:px-10 lg:px-0">
-              {children}
-            </div>
-          </main>
-          <Footer />
-        </body>
-        <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_TRACKING_ID} />
+      {/* Google Tag Manager */}
+      <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GA_TRACKING_ID} />
+      <body className="antialiased">
+      <Navbar />
+
+      {/* animated page-switch */}
+      <PageTransition>
+        <main className="relative isolate overflow-hidden">
+          <div className="mx-auto min-h-svh w-full max-w-[50rem] px-5 py-3 pt-16 md:px-10 lg:px-0">
+            {children}
+          </div>
+        </main>
+      </PageTransition>
+
+      <Footer />
+      <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_TRACKING_ID} />
+      </body>
       </html>
-    </ViewTransitions>
   );
 }

@@ -1,13 +1,13 @@
 export const greetingList = [
   {
     key: 1,
-    text: 'こんにちは',
-    lang: 'Japanese'
+    text: 'Hello',
+    lang: 'English'
   },
   {
     key: 2,
-    text: 'Hello',
-    lang: 'English'
+    text: 'こんにちは',
+    lang: 'Japanese'
   },
   {
     key: 3,

@@ -1,4 +1,4 @@
-import { Link } from 'next-view-transitions';
+
 import { HiCursorClick } from 'react-icons/hi';
 
 import { GITHUB_API_URL, GITHUB_USERNAME } from '@/lib/constants';
@@ -52,15 +52,16 @@ export default async function FeaturedRepo() {
           ))}
         </div>
       </div>
-      <div className="flex justify-center">
-        <Link
-          href="/open-source"
-          className="mt-10 flex w-auto justify-center gap-2 text-base text-primary transition ease-in hover:text-primary-foreground"
-        >
-          <span>More Repositories</span>
-          <HiCursorClick className="inline-block text-xl" />
-        </Link>
-      </div>
+      {/*<div className="flex justify-center">*/}
+      {/*  <Link*/}
+      {/*    href="/open-source"*/}
+      {/*    className="mt-10 flex w-auto justify-center gap-2 text-base text-primary transition ease-in hover:text-primary-foreground"*/}
+      {/*  >*/}
+      {/*    <span>More Repositories</span>*/}
+      {/*    <HiCursorClick className="inline-block text-xl" />*/}
+      {/*  </Link>*/}
+      {/*</div>*/}
     </section>
   );
 }
+
